@@ -1,4 +1,4 @@
-package com.ucan.Clinica.utils;
+package ucan.edu.sg_acad.utils;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

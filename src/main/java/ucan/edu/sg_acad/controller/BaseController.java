@@ -1,6 +1,7 @@
-package com.ucan.Clinica.controllers;
+package ucan.edu.sg_acad.controller;
 
-import com.ucan.Clinica.utils.ResponseControllerUtils;
+
+import ucan.edu.sg_acad.utils.ResponseControllerUtils;
 
 public class BaseController extends ResponseControllerUtils {
 

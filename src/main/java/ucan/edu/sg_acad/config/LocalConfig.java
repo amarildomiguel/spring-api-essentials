@@ -1,31 +1,44 @@
-package ucan.edu.userapi.config;
+package ucan.edu.sg_acad.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.boot.CommandLineRunner;
-import ucan.edu.userapi.domain.User;
-import ucan.edu.userapi.repositories.UserRepository;
+import ucan.edu.sg_acad.entities.Pessoa;
+import ucan.edu.sg_acad.repositories.PessoaRepository;
+
 
 import java.util.List;
 
 @Configuration
-@Profile("local")
 public class LocalConfig {
 
     @Autowired
-    private UserRepository repository;
+    private PessoaRepository repository;
 
     @Bean
     public CommandLineRunner startDB() {
         return args -> {
-            User u1 = new User(null, "Amarildo Miguel", "amarildomgl@mail.com", "password");
-            User u2 = new User(null, "Célsia de Sousa", "celsiasousa@mail.com", "password");
-            User u3 = new User(null, "Joseph Cipriano", "joseph@mail.com", "password");
-            User u4 = new User(null, "Frank Miguel", "frankmgl@mail.com", "password");
+            Pessoa p1 = new Pessoa(
+                    null, "Tony Stark",
+                    "00000",
+                    java.time.LocalDate.parse("1999-02-24")
+            );
 
-            repository.saveAll(List.of(u1, u2, u3, u4));
+            Pessoa p2 = new Pessoa(
+                    null, "Zebedeu Andre",
+                    "11111",
+                    java.time.LocalDate.parse("1985-05-15")
+            );
+
+            Pessoa p3 = new Pessoa(
+                    null, "Fulano de Tal",
+                    "22222",
+                    java.time.LocalDate.parse("1990-08-30")
+            );
+
+            repository.saveAll(List.of(p1, p2, p3));
+
         };
     }
 }

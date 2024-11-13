@@ -1,4 +1,4 @@
-package com.ucan.Clinica.utils;
+package ucan.edu.sg_acad.utils;
 
 import lombok.Getter;
 import lombok.Setter;
