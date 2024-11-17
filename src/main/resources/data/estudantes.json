@@ -1,0 +1,32 @@
+[
+  {
+    "pkEstudante": 1,
+    "numeroEstudante": "00000",
+    "pessoa": {
+      "pkPessoa": 1,
+      "nome": "Amarildo Miguel",
+      "numeroBi": "00000",
+      "dataNascimento": "1999-02-24"
+    }
+  },
+  {
+    "pkEstudante": 2,
+    "numeroEstudante": "11111",
+    "pessoa": {
+      "pkPessoa": 2,
+      "nome": "Célsia de Sousa",
+      "numeroBi": "11111",
+      "dataNascimento": "1985-05-15"
+    }
+  },
+  {
+    "pkEstudante": 3,
+    "numeroEstudante": "22222",
+    "pessoa": {
+      "pkPessoa": 3,
+      "nome": "Joseph Cipriano",
+      "numeroBi": "22222",
+      "dataNascimento": "1990-08-30"
+    }
+  }
+]

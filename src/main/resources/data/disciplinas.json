@@ -1,0 +1,98 @@
+[
+  {
+    "pkDisciplina": 1,
+    "nome": "Fundamentos de Programação I"
+  },
+  {
+    "pkDisciplina": 2,
+    "nome": "Fundamentos de Programação II"
+  },
+  {
+    "pkDisciplina": 3,
+    "nome": "Sistemas Operativos I"
+  },
+  {
+    "pkDisciplina": 4,
+    "nome": "Redes de Computadores"
+  },
+  {
+    "pkDisciplina": 5,
+    "nome": "Engenharia de Software"
+  },
+  {
+    "pkDisciplina": 6,
+    "nome": "Banco de Dados"
+  },
+  {
+    "pkDisciplina": 7,
+    "nome": "Sistemas Operativos II"
+  },
+  {
+    "pkDisciplina": 8,
+    "nome": "Administração de Sistemas"
+  },
+  {
+    "pkDisciplina": 9,
+    "nome": "Algoritmos e Complexidade"
+  },
+  {
+    "pkDisciplina": 10,
+    "nome": "Computação Gráfica"
+  },
+  {
+    "pkDisciplina": 11,
+    "nome": "Cálculo Diferencial e Integral I"
+  },
+  {
+    "pkDisciplina": 12,
+    "nome": "Cálculo Diferencial e Integral II"
+  },
+  {
+    "pkDisciplina": 13,
+    "nome": "Álgebra Linear"
+  },
+  {
+    "pkDisciplina": 14,
+    "nome": "Estatística e Probabilidades"
+  },
+  {
+    "pkDisciplina": 15,
+    "nome": "Física Geral I"
+  },
+  {
+    "pkDisciplina": 16,
+    "nome": "Física Geral II"
+  },
+  {
+    "pkDisciplina": 17,
+    "nome": "Lógica Computacional"
+  },
+  {
+    "pkDisciplina": 18,
+    "nome": "Teoria da Computação"
+  },
+  {
+    "pkDisciplina": 19,
+    "nome": "Métodos Numéricos"
+  },
+  {
+    "pkDisciplina": 20,
+    "nome": "Introdução à Inteligência Artificial"
+  },
+  {
+    "pkDisciplina": 21,
+    "nome": "Sistemas Digitais"
+  },
+  {
+    "pkDisciplina": 22,
+    "nome": "Circuitos Eléctricos"
+  },
+  {
+    "pkDisciplina": 23,
+    "nome": "Eletrónica Básica"
+  },
+  {
+    "pkDisciplina": 24,
+    "nome": "Programação Orientada por Objectos"
+  }
+]
