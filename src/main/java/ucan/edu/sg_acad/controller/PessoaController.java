@@ -12,7 +12,7 @@ import ucan.edu.sg_acad.utils.ResponseBody;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("pessoa")
+@RequestMapping("/pessoa")
 public class PessoaController extends BaseController{
     @Autowired
     private PessoaServiceImpl service;
@@ -34,7 +34,6 @@ public class PessoaController extends BaseController{
 
     @PostMapping
     public ResponseEntity<ResponseBody> criar(@RequestBody Pessoa pessoa) {
-        System.out.println(pessoa.getNome());
         return this.created("Pessoa adicionado com sucesso.", this.service.criar(pessoa));
     }
 

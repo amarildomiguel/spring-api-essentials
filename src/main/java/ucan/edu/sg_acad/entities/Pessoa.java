@@ -13,7 +13,8 @@ import java.time.LocalDate;
 public class Pessoa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "pkPessoa")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pkPessoa;
 
     @Column(name = "nome")
