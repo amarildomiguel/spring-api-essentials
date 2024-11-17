@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Estudante {
 
     @Id
-    @Column(name = "pkEstudante")
+    @Column(name = "pk_estudante")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pkEstudante;
 
@@ -20,7 +20,7 @@ public class Estudante {
     private String numeroEstudante;
 
     @OneToOne
-    @JoinColumn(name = "fkPessoa")
+    @JoinColumn(name = "fk_pessoa")
     private Pessoa pessoa;
 
 }

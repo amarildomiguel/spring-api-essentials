@@ -1,0 +1,35 @@
+[
+  {
+    "pkPrecedencia": 1,
+    "fkDisciplina": {
+      "pkDisciplina": 3,
+      "nome": "Sistemas Operativos II"
+    },
+    "fkDisciplinaPrecedente": {
+      "pkDisciplina": 7,
+      "nome": "Sistemas Operativos I"
+    }
+  },
+  {
+    "pkPrecedencia": 2,
+    "fkDisciplina": {
+      "pkDisciplina": 12,
+      "nome": "Cálculo Diferencial e Integral II"
+    },
+    "fkDisciplinaPrecedente": {
+      "pkDisciplina": 11,
+      "nome": "Cálculo Diferencial e Integral I"
+    }
+  },
+  {
+    "pkPrecedencia": 3,
+    "fkDisciplina": {
+      "pkDisciplina": 2,
+      "nome": "Fundamentos de Programação II"
+    },
+    "fkDisciplinaPrecedente": {
+      "pkDisciplina": 1,
+      "nome": "Fundamentos de Programação I"
+    }
+  }
+]

@@ -14,7 +14,7 @@ import lombok.Setter;
 public class Disciplina {
 
     @Id
-    @Column(name = "pkDisciplina")
+    @Column(name = "pk_disciplina")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pkDisciplina;
 

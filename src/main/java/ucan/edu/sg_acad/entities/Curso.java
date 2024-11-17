@@ -11,7 +11,7 @@ import lombok.*;
 @Entity(name = "cursos")
 public class Curso {
     @Id
-    @Column(name = "pkCurso")
+    @Column(name = "pk_curso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pkCurso;
 

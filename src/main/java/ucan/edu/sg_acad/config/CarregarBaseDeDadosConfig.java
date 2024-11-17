@@ -7,14 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ucan.edu.sg_acad.entities.Curso;
-import ucan.edu.sg_acad.entities.Disciplina;
-import ucan.edu.sg_acad.entities.Estudante;
-import ucan.edu.sg_acad.entities.Pessoa;
-import ucan.edu.sg_acad.repositories.CursoRepository;
-import ucan.edu.sg_acad.repositories.DisciplinaRepository;
-import ucan.edu.sg_acad.repositories.EstudanteRepository;
-import ucan.edu.sg_acad.repositories.PessoaRepository;
+import ucan.edu.sg_acad.entities.*;
+import ucan.edu.sg_acad.repositories.*;
 
 
 import java.io.IOException;
@@ -32,6 +26,8 @@ public class CarregarBaseDeDadosConfig {
     private DisciplinaRepository disciplinaRepository;
     @Autowired
     private CursoRepository cursoRepository;
+    @Autowired
+    private PrecendenciaRepository precendenciaRepository;
 
     @Bean
     public CommandLineRunner startDB() {
@@ -39,6 +35,7 @@ public class CarregarBaseDeDadosConfig {
             cadastrarEstudantes();
             cadastrarDisciplinas();
             cadastrarCursos();
+            cadastrarPrecedencia();
         };
     }
 
@@ -88,6 +85,20 @@ public class CarregarBaseDeDadosConfig {
         }
         System.out.println("Estudantes salvos com sucesso!");
 
+    }
+
+    public void cadastrarPrecedencia() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        TypeReference<List<Precedencia>> typeReference = new TypeReference<List<Precedencia>>() {
+        };
+        InputStream inputStream = TypeReference.class.getResourceAsStream("/data/precedencia.json");
+
+        List<Precedencia> precedencias = mapper.readValue(inputStream, typeReference);
+        for (Precedencia precedencia : precedencias) {
+            precendenciaRepository.save(precedencia);
+        }
+        System.out.println("Precedencias salvas com sucesso!");
     }
 
 
