@@ -6,4 +6,6 @@ import ucan.edu.sg_acad.entities.Estudante;
 
 @Repository
 public interface EstudanteRepository extends JpaRepository<Estudante, Long> {
+    Estudante findByNumeroEstudante(String numeroEstudante);
+
 }

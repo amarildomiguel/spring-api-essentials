@@ -21,9 +21,14 @@ public class EstudanteServiceImpl extends AbstractService<Estudante, Long> imple
     public Estudante criar(Estudante estudante, Pessoa pessoa) {
         if (estudante == null || pessoa == null)
             throw new NullPointerException("Entidade a ser registrada está nula.");
-
         Pessoa pessoaSalva = pessoaRepository.save(pessoa);
         estudante.setPessoa(pessoaSalva);
         return estudanteRepository.save(estudante);
     }
+
+    public Estudante buscarPorNumeroEstudante(String numeroEstudante) {
+        return estudanteRepository.findByNumeroEstudante(numeroEstudante);
+    }
+
+
 }

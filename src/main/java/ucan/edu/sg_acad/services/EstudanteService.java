@@ -4,5 +4,6 @@ import ucan.edu.sg_acad.entities.Estudante;
 import ucan.edu.sg_acad.entities.Pessoa;
 
 public interface EstudanteService{
-    public Estudante criar(Estudante estudante, Pessoa pessoa);
+   Estudante criar(Estudante estudante, Pessoa pessoa);
+   Estudante buscarPorNumeroEstudante(String numeroEstudante);
 }
