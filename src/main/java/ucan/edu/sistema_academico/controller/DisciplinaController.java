@@ -16,17 +16,23 @@ public class DisciplinaController extends BaseController {
     @Autowired
     private DisciplinaServiceImpl service;
 
+
+    @GetMapping("/comPrecedencia")
+    public ResponseEntity<ResponseBody> buscarDisciplinasComPrecedencia() {
+        return this.ok("Lista de disciplinas com precedencia",
+                this.service.buscarDisciplinasComPrecedencia()
+        );
+    }
+
     @GetMapping
-    public ResponseEntity<ResponseBody> listar()
-    {
-        return this.ok("Lista", this.service.findAll() );
+    public ResponseEntity<ResponseBody> listar() {
+        return this.ok("Lista", this.service.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Long id)
-    {
+    public ResponseEntity<ResponseBody> obter(@PathVariable Long id) {
         Optional<Disciplina> entidade = this.service.findById(id);
-        if ( entidade.isPresent() )
+        if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
         return this.naoEncontrado("Não encontrada.", null);
     }
@@ -38,7 +44,7 @@ public class DisciplinaController extends BaseController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Long id) {
-        return this.ok("Eliminado com sucesso.", this.service.eliminar(id) );
+        return this.ok("Eliminado com sucesso.", this.service.eliminar(id));
     }
 
     @PutMapping("/{id}")

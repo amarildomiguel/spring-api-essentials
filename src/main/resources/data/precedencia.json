@@ -1,16 +1,5 @@
 [
   {
-    "pkPrecedencia": 1,
-    "fkDisciplina": {
-      "pkDisciplina": 3,
-      "nome": "Sistemas Operativos II"
-    },
-    "fkDisciplinaPrecedente": {
-      "pkDisciplina": 7,
-      "nome": "Sistemas Operativos I"
-    }
-  },
-  {
     "pkPrecedencia": 2,
     "fkDisciplina": {
       "pkDisciplina": 12,
