@@ -6,4 +6,5 @@ import ucan.edu.sg_acad.entities.Curso;
 
 @Repository
 public interface CursoRepository extends JpaRepository<Curso, Long> {
+
 }

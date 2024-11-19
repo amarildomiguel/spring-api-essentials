@@ -27,4 +27,6 @@ public class Pessoa {
     @Column(name = "data_nascimento", nullable = true)
     private LocalDate dataNascimento;
 
+
+
 }
