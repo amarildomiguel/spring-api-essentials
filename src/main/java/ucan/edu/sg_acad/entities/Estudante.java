@@ -1,13 +1,11 @@
 package ucan.edu.sg_acad.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Setter @Getter
 @AllArgsConstructor @NoArgsConstructor
+@ToString
 @Entity(name = "estudantes")
 public class Estudante {
 

@@ -1,15 +1,17 @@
 package ucan.edu.sg_acad.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity(name = "disciplinas")
 public class Disciplina {
 

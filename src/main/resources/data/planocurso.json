@@ -1,0 +1,57 @@
+[
+  {
+    "semestre": 1,
+    "disciplina": {
+      "pkDisciplina": 1,
+      "nome": "Fundamentos de Programação I"
+    },
+    "curso": {
+      "pkCurso": 1,
+      "nome": "Engenharia Informática"
+    }
+  },
+  {
+    "semestre": 1,
+    "disciplina": {
+      "pkDisciplina": 3,
+      "nome": "Sistemas Operativos I"
+    },
+    "curso": {
+      "pkCurso": 1,
+      "nome": "Engenharia Informática"
+    }
+  },
+  {
+    "semestre": 1,
+    "disciplina": {
+      "pkDisciplina": 4,
+      "nome": "Redes de Computadores"
+    },
+    "curso": {
+      "pkCurso": 1,
+      "nome": "Engenharia Informática"
+    }
+  },
+  {
+    "semestre": 2,
+    "disciplina": {
+      "pkDisciplina": 2,
+      "nome": "Fundamentos de Programação II"
+    },
+    "curso": {
+      "pkCurso": 1,
+      "nome": "Engenharia Informática"
+    }
+  },
+  {
+    "semestre": 2,
+    "disciplina": {
+      "pkDisciplina": 12,
+      "nome": "Cálculo Diferencial e Integral II"
+    },
+    "curso": {
+      "pkCurso": 1,
+      "nome": "Engenharia Informática"
+    }
+  }
+]

@@ -1,11 +1,14 @@
 [
   {
+    "pkCurso": 1,
     "nome": "Engenharia Informática"
   },
   {
+    "pkCurso": 2,
     "nome": "Engenharia de Telecomunicações"
   },
   {
+    "pkCurso": 3,
     "nome": "Engenharia de Petróleo e Recursos Minerais"
   }
 ]

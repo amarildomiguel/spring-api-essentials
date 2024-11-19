@@ -1,13 +1,18 @@
 package ucan.edu.sg_acad.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Setter
 @Getter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity(name = "cursos")
 public class Curso {
     @Id
@@ -17,4 +22,8 @@ public class Curso {
 
     @Column(name = "nome", nullable = false)
     private String nome;
+
+    @OneToMany(mappedBy = "curso")
+    @JsonManagedReference  // para gerenciar a serialização bidirecional evitando a recursão infinita
+    private List<PlanoCurso> planoCursos;
 }

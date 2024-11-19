@@ -28,6 +28,8 @@ public class CarregarBaseDeDadosConfig {
     private CursoRepository cursoRepository;
     @Autowired
     private PrecendenciaRepository precendenciaRepository;
+    @Autowired
+    private PlanoCursoRepository planoCursoRepository;
 
     @Bean
     public CommandLineRunner startDB() {
@@ -36,6 +38,7 @@ public class CarregarBaseDeDadosConfig {
             cadastrarDisciplinas();
             cadastrarCursos();
             cadastrarPrecedencia();
+            cadastrarPlanodeCurso();
         };
     }
 
@@ -99,6 +102,21 @@ public class CarregarBaseDeDadosConfig {
             precendenciaRepository.save(precedencia);
         }
         System.out.println("Precedencias salvas com sucesso!");
+    }
+
+    public void cadastrarPlanodeCurso() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        TypeReference<List<PlanoCurso>> typeReference = new TypeReference<List<PlanoCurso>>() {
+        };
+
+        InputStream inputStream = TypeReference.class.getResourceAsStream("/data/planocurso.json");
+
+        List<PlanoCurso> planoCursos = mapper.readValue(inputStream, typeReference);
+        for (PlanoCurso planoCurso : planoCursos) {
+            planoCursoRepository.save(planoCurso);
+        }
+        System.out.println("Plano de Curso salvo com sucesso!");
     }
 
 
