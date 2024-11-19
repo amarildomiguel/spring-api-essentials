@@ -1,6 +1,5 @@
 [
   {
-    "pkPrecedencia": 2,
     "fkDisciplina": {
       "pkDisciplina": 12,
       "nome": "Cálculo Diferencial e Integral II"
@@ -11,7 +10,6 @@
     }
   },
   {
-    "pkPrecedencia": 3,
     "fkDisciplina": {
       "pkDisciplina": 2,
       "nome": "Fundamentos de Programação II"
@@ -19,6 +17,26 @@
     "fkDisciplinaPrecedente": {
       "pkDisciplina": 1,
       "nome": "Fundamentos de Programação I"
+    }
+  },
+  {
+    "fkDisciplina": {
+      "pkDisciplina": 26,
+      "nome": "Sistemas Distribuídos & Paralelos II"
+    },
+    "fkDisciplinaPrecedente":  {
+      "pkDisciplina": 25,
+      "nome": "Sistemas Distribuídos & Paralelos I"
+    }
+  },
+  {
+    "fkDisciplina": {
+      "pkDisciplina": 25,
+      "nome": "Sistemas Distribuídos & Paralelos I"
+    },
+    "fkDisciplinaPrecedente": {
+      "pkDisciplina": 6,
+      "nome": "Banco de Dados"
     }
   }
 ]

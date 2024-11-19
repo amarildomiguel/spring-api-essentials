@@ -94,5 +94,13 @@
   {
     "pkDisciplina": 24,
     "nome": "Programação Orientada por Objectos"
+  },
+  {
+    "pkDisciplina": 25,
+    "nome": "Sistemas Distribuídos & Paralelos I"
+  },
+  {
+    "pkDisciplina": 26,
+    "nome": "Sistemas Distribuídos & Paralelos II"
   }
 ]

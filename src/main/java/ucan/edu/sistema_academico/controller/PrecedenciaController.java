@@ -11,22 +11,26 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/precedencia")
-public class PrecedenciaController extends BaseController{
+public class PrecedenciaController extends BaseController {
 
     @Autowired
     private PrecedenciaServiceImpl service;
 
+    @GetMapping("/disciplina/{id}")
+    public ResponseEntity<ResponseBody> buscarPrecedenciasPorFkDisciplina(@PathVariable Long id) {
+        return this.ok("Lista de precedencias por disciplina",
+                this.service.buscarPrecedenciasPorFkDisciplina(id));
+    }
+
     @GetMapping
-    public ResponseEntity<ResponseBody> listar()
-    {
-        return this.ok("Lista", this.service.findAll() );
+    public ResponseEntity<ResponseBody> listar() {
+        return this.ok("Lista", this.service.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Long id)
-    {
+    public ResponseEntity<ResponseBody> obter(@PathVariable Long id) {
         Optional<Precedencia> entidade = this.service.findById(id);
-        if ( entidade.isPresent() )
+        if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
         return this.naoEncontrado("Não encontrada.", null);
     }
@@ -38,7 +42,7 @@ public class PrecedenciaController extends BaseController{
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Long id) {
-        return this.ok("Eliminado com sucesso.", this.service.eliminar(id) );
+        return this.ok("Eliminado com sucesso.", this.service.eliminar(id));
     }
 
     @PutMapping("/{id}")

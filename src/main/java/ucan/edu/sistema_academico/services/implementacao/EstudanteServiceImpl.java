@@ -46,6 +46,4 @@ public class EstudanteServiceImpl extends AbstractService<Estudante, Long> imple
     public Estudante buscarPorNumeroEstudante(String numeroEstudante) {
         return estudanteRepository.findByNumeroEstudante(numeroEstudante);
     }
-
-
 }
