@@ -2,31 +2,35 @@ package ucan.edu.sistema_academico.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Entity(name = "localidades")
-public class Localidade {
+public class Localidade implements Serializable {
     @Id
-    @Column(name = "pk_localidade")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pk_localidade")
     private Integer pkLocalidade;
 
-    @Column(name = "designacao")
-    private String designacao;
-
-    @ManyToOne
-    @JoinColumn(name = "fk_localidade_pai")
-    private Localidade fkLocalidadePai;
+    @Column(name = "nome")
+    private String nome;
 
     @OneToMany(mappedBy = "fkLocalidadePai")
     @JsonIgnore
-    private List<Localidade> subLocalidades;
+    private List<Localidade> localidadeList;
+
+    @JoinColumn(name = "fk_localidade_pai", referencedColumnName = "pk_localidade")
+    @ManyToOne
+    private Localidade fkLocalidadePai;
+
 
 }

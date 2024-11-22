@@ -1,0 +1,121 @@
+[
+  {
+    "nome": "Luanda",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Benguela",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Huambo",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Huíla",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Cabinda",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Bié",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Moxico",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Uíge",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Malanje",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Cuanza Sul",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Cuanza Norte",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Lunda Norte",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Lunda Sul",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Cuando Cubango",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Namibe",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Zaire",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  },
+  {
+    "nome": "Bengo",
+    "fkLocalidadePai": {
+      "pkLocalidade": 8,
+      "nome": "Angola"
+    }
+  }
+]

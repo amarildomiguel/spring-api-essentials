@@ -1,0 +1,30 @@
+[
+  {
+    "pkLocalidade": 1,
+    "nome": "África"
+  },
+  {
+    "pkLocalidade": 2,
+    "nome": "América do Norte"
+  },
+  {
+    "pkLocalidade": 3,
+    "nome": "América do Sul"
+  },
+  {
+    "pkLocalidade": 4,
+    "nome": "Antártica"
+  },
+  {
+    "pkLocalidade": 5,
+    "nome": "Ásia"
+  },
+  {
+    "pkLocalidade": 6,
+    "nome": "Europa"
+  },
+  {
+    "pkLocalidade": 7,
+    "nome": "Oceania"
+  }
+]

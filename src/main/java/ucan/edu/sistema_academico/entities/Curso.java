@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Setter
@@ -14,7 +15,7 @@ import java.util.List;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity(name = "cursos")
-public class Curso {
+public class Curso implements Serializable {
     @Id
     @Column(name = "pk_curso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,0 +1,10 @@
+[
+  {
+    "pkLocalidade": 8,
+    "nome": "Angola",
+    "fkLocalidadePai": {
+      "pkLocalidade": 1,
+      "nome": "África"
+    }
+  }
+]

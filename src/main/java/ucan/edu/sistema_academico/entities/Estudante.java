@@ -3,13 +3,15 @@ package ucan.edu.sistema_academico.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity(name = "estudantes")
-public class Estudante {
+public class Estudante implements Serializable {
 
     @Id
     @Column(name = "pk_estudante")

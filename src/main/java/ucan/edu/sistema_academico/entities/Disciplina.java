@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -11,7 +13,7 @@ import lombok.*;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity(name = "disciplinas")
-public class Disciplina {
+public class Disciplina implements Serializable {
 
     @Id
     @Column(name = "pk_disciplina")

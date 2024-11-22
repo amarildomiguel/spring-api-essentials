@@ -7,10 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.JpaRepository;
-import ucan.edu.sistema_academico.entities.Curso;
-import ucan.edu.sistema_academico.entities.Disciplina;
-import ucan.edu.sistema_academico.entities.PlanoCurso;
-import ucan.edu.sistema_academico.entities.Precedencia;
+import ucan.edu.sistema_academico.entities.*;
 import ucan.edu.sistema_academico.repositories.*;
 
 import java.io.IOException;
@@ -20,7 +17,7 @@ import java.util.List;
 @Configuration
 public class LoadJsonFilesConfig {
 
-
+    private final LocalidadeRepository localidadeRepository;
     private final DisciplinaRepository disciplinaRepository;
     private final CursoRepository cursoRepository;
     private final PrecendenciaRepository precendenciaRepository;
@@ -29,7 +26,7 @@ public class LoadJsonFilesConfig {
 
     // Injeção de dependências via construtor
     public LoadJsonFilesConfig(
-            EstudanteRepository estudanteRepository,
+            LocalidadeRepository localidadeRepository,
             DisciplinaRepository disciplinaRepository,
             CursoRepository cursoRepository,
             PrecendenciaRepository precendenciaRepository,
@@ -38,6 +35,7 @@ public class LoadJsonFilesConfig {
         this.cursoRepository = cursoRepository;
         this.precendenciaRepository = precendenciaRepository;
         this.planoCursoRepository = planoCursoRepository;
+        this.localidadeRepository = localidadeRepository;
         this.objectMapper = new ObjectMapper();
         this.objectMapper.registerModule(new JavaTimeModule());
     }
@@ -53,6 +51,12 @@ public class LoadJsonFilesConfig {
             }, precendenciaRepository);
             carregarDados("/data/planocurso.json", new TypeReference<List<PlanoCurso>>() {
             }, planoCursoRepository);
+            carregarDados("/data/continentes.json", new TypeReference<List<Localidade>>() {
+            }, localidadeRepository);
+            carregarDados("/data/paises.json", new TypeReference<List<Localidade>>() {
+            }, localidadeRepository);
+            carregarDados("/data/provincias.json", new TypeReference<List<Localidade>>() {
+            }, localidadeRepository);
         };
     }
 

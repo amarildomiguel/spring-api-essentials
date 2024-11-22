@@ -17,17 +17,10 @@ public abstract class AbstractService<E, K> {
     @Autowired
     protected JpaRepository<E, K> repository;
 
-    public Repository<E, K> getRepository() {
-        return repository;
-    }
-
     public List<E> findAll() {
         return this.repository.findAll();
     }
 
-    public Page<E> findPagina(Pageable pageable) {
-        return this.repository.findAll(pageable);
-    }
 
     public Optional<E> findById(K id) {
         return this.repository.findById(id);
@@ -51,5 +44,14 @@ public abstract class AbstractService<E, K> {
             return null;
         this.repository.deleteById(id);
         return entidade.get();
+    }
+
+
+    public Page<E> findPagina(Pageable pageable) {
+        return this.repository.findAll(pageable);
+    }
+
+    public Repository<E, K> getRepository() {
+        return repository;
     }
 }
