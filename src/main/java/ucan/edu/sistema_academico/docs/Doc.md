@@ -29,6 +29,14 @@ Representa um estudante matriculado na instituição.
 - **numeroEstudante**: Número de matrícula do estudante.
 - **pessoa**: Referência à entidade `Pessoa` associada ao estudante.
 
+##### LOCALIDADE
+
+Representa um estudante matriculado na instituição.
+
+- **pkLocalidade**:
+- **designacao**:
+- **fkLocalidade**:
+
 ##### Pessoa
 
 Representa uma pessoa, que pode ser um estudante, professor, etc.

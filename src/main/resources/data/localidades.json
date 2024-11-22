@@ -1,0 +1,58 @@
+{
+  "provincias": [
+    {
+      "designacao": "Bengo"
+    },
+    {
+      "designacao": "Benguela"
+    },
+    {
+      "designacao": "Bié"
+    },
+    {
+      "designacao": "Cabinda"
+    },
+    {
+      "designacao": "Cuando Cubango"
+    },
+    {
+      "designacao": "Cuanza Norte"
+    },
+    {
+      "designacao": "Cuanza Sul"
+    },
+    {
+      "designacao": "Cunene"
+    },
+    {
+      "designacao": "Huambo"
+    },
+    {
+      "designacao": "Huíla"
+    },
+    {
+      "designacao": "Luanda"
+    },
+    {
+      "designacao": "Lunda Norte"
+    },
+    {
+      "designacao": "Lunda Sul"
+    },
+    {
+      "designacao": "Malanje"
+    },
+    {
+      "designacao": "Moxico"
+    },
+    {
+      "designacao": "Namibe"
+    },
+    {
+      "designacao": "Uíge"
+    },
+    {
+      "designacao": "Zaire"
+    }
+  ]
+}
