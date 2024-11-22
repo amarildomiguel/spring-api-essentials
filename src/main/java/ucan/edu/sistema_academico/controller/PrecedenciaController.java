@@ -17,12 +17,12 @@ public class PrecedenciaController extends BaseController {
     private PrecedenciaService service;
 
     @GetMapping
-    public ResponseEntity<ResponseBody> listar() {
+    public ResponseEntity<ResponseBody> get() {
         return this.ok("Lista", this.service.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Integer id) {
+    public ResponseEntity<ResponseBody> find(@PathVariable Integer id) {
         Optional<Precedencia> entidade = this.service.findById(id);
         if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
@@ -30,17 +30,17 @@ public class PrecedenciaController extends BaseController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBody> criar(@RequestBody Precedencia entidade) {
+    public ResponseEntity<ResponseBody> create(@RequestBody Precedencia entidade) {
         return this.created("Adicionado com sucesso.", this.service.create(entidade));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Integer id) {
+    public ResponseEntity<ResponseBody> delete(@PathVariable("id") Integer id) {
         return this.ok("Eliminado com sucesso.", this.service.delete(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Integer id, @RequestBody Precedencia entidade) {
+    public ResponseEntity<ResponseBody> edit(@PathVariable("id") Integer id, @RequestBody Precedencia entidade) {
         return this.ok("Editado com sucesso.", (Precedencia) service.update(id, entidade));
     }
 }

@@ -22,7 +22,7 @@ public class EstudanteController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Integer id) {
+    public ResponseEntity<ResponseBody> find(@PathVariable Integer id) {
         Optional<Estudante> entidade = this.service.findById(id);
         if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
@@ -30,17 +30,17 @@ public class EstudanteController extends BaseController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBody> criar(@RequestBody Estudante entidade) {
+    public ResponseEntity<ResponseBody> create(@RequestBody Estudante entidade) {
         return this.created("Adicionado com sucesso.", this.service.create(entidade));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Integer id) {
+    public ResponseEntity<ResponseBody> delete(@PathVariable("id") Integer id) {
         return this.ok("Eliminado com sucesso.", this.service.delete(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Integer id, @RequestBody Estudante entidade) {
+    public ResponseEntity<ResponseBody> edit(@PathVariable("id") Integer id, @RequestBody Estudante entidade) {
         return this.ok("Editado com sucesso.", (Estudante) service.update(id, entidade));
     }
 }

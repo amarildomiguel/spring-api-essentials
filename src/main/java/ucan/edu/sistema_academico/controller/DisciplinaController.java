@@ -16,14 +16,13 @@ public class DisciplinaController extends BaseController {
     @Autowired
     private DisciplinaService service;
 
-
     @GetMapping
-    public ResponseEntity<ResponseBody> listar() {
+    public ResponseEntity<ResponseBody> get() {
         return this.ok("Lista", this.service.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Integer id) {
+    public ResponseEntity<ResponseBody> find(@PathVariable Integer id) {
         Optional<Disciplina> entidade = this.service.findById(id);
         if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
@@ -31,17 +30,17 @@ public class DisciplinaController extends BaseController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseBody> criar(@RequestBody Disciplina entidade) {
+    public ResponseEntity<ResponseBody> create(@RequestBody Disciplina entidade) {
         return this.created("Adicionado com sucesso.", this.service.create(entidade));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Integer id) {
+    public ResponseEntity<ResponseBody> delete(@PathVariable("id") Integer id) {
         return this.ok("Eliminado com sucesso.", this.service.delete(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Integer id, @RequestBody Disciplina entidade) {
+    public ResponseEntity<ResponseBody> edit(@PathVariable("id") Integer id, @RequestBody Disciplina entidade) {
         return this.ok("Editado com sucesso.", (Disciplina) service.update(id, entidade));
     }
 }
