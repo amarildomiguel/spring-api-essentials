@@ -7,10 +7,10 @@ import ucan.edu.sistema_academico.entities.Desporto;
 import ucan.edu.sistema_academico.repositories.DesportoRepository;
 import ucan.edu.sistema_academico.repositories.EstudanteRepository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 @Service
 public class DesportoService {
@@ -35,9 +35,10 @@ public class DesportoService {
             "Tênis de Mesa", "Tênis de Campo", "Yoga", "Ginástica", "Xadrez"
         );
 
-        List<Desporto> desportos = nomesDesportos.stream()
-            .map(Desporto::new)
-            .collect(Collectors.toList());
+        List<Desporto> desportos = new ArrayList<>();
+        for (String nome : nomesDesportos) {
+            desportos.add(new Desporto(nome));
+        }
 
         desportoRepository.saveAll(desportos);
     }
