@@ -12,4 +12,6 @@ public interface LocalidadeRepository extends JpaRepository<Localidade, Integer>
 
     List<Localidade> findAllByOrderByNomeAsc();
 
+    List<Localidade> findByFkLocalidadePai(Localidade fkLocalidadePai);
+
 }

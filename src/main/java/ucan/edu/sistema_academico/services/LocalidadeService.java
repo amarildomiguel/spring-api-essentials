@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 import ucan.edu.sistema_academico.entities.Localidade;
 import ucan.edu.sistema_academico.repositories.LocalidadeRepository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class LocalidadeService extends AbstractService<Localidade, Integer> {
@@ -18,12 +15,15 @@ public class LocalidadeService extends AbstractService<Localidade, Integer> {
     private LocalidadeRepository localidadeRepository;
 
     private Map<Integer, Localidade> localidadeCache = new HashMap<>();
+    private static List<Localidade> localidadesAngolanas = new ArrayList<>();
 
     @PostConstruct
     public void init() {
         localidadeRepository.findAll().forEach(
                 localidade ->
                         localidadeCache.put(localidade.getPkLocalidade(), localidade));
+
+        criarLocalidadesAngolanas();
     }
 
     public Localidade findByNome(String nome) {
@@ -77,4 +77,25 @@ public class LocalidadeService extends AbstractService<Localidade, Integer> {
                 localidade -> localidadeCache.put(localidade.getPkLocalidade(), localidade)
         );
     }
+
+    private void criarLocalidadesAngolanas() {
+        // Find Angola first
+        Localidade angola = localidadeRepository.findByNome("Angola");
+
+        if (angola != null) {
+            // Find all localities where Angola is the parent
+            localidadesAngolanas = localidadeRepository.findByFkLocalidadePai(angola);
+        }
+    }
+
+    public Localidade escolherAleatoriamenteLocalidadeAngolana() {
+        if (localidadesAngolanas.isEmpty()) {
+            criarLocalidadesAngolanas(); // Reload if empty
+        }
+
+        int size = localidadesAngolanas.size();
+        int posicao = (int) (Math.random() * size);
+        return localidadesAngolanas.get(posicao);
+    }
+
 }

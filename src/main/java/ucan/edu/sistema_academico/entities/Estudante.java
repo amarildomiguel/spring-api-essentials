@@ -28,13 +28,13 @@ public class Estudante implements Serializable {
 
     private LocalDate dataDeNascimento;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "fk_local_trabalho")
     private Localidade localTrabalho;
 
     @ManyToOne
     @JoinColumn(name = "fk_local_residencia")
-    private Localidade localResidencia;*/
+    private Localidade localResidencia;
 
     @ManyToMany
     @JoinTable(
