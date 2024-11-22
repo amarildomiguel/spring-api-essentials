@@ -8,10 +8,10 @@ import ucan.edu.sistema_academico.entities.Disciplina;
 import java.util.List;
 
 @Repository
-public interface DisciplinaRepository extends JpaRepository<Disciplina, Long> {
+public interface DisciplinaRepository extends JpaRepository<Disciplina, Integer> {
 
     // listar quais são as disciplinas que possuem precedência
     @Query("SELECT d FROM disciplinas d WHERE d.pkDisciplina IN (SELECT p.fkDisciplina.pkDisciplina FROM precendencia p)")
-    List<Disciplina> findDisciplinasWithPrecedencia();
+    List<Disciplina> getDisciplinasWithPrecedencia();
 
 }

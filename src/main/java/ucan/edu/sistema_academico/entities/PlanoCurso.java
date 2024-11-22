@@ -16,7 +16,7 @@ public class PlanoCurso {
     @Id
     @Column(name = "pk_curso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkPlanoCurso;
+    private Integer pkPlanoCurso;
 
     @Column(name = "semestre", nullable = false)
     private int semestre;

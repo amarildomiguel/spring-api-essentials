@@ -9,12 +9,12 @@ import ucan.edu.sistema_academico.entities.PlanoCurso;
 import java.util.List;
 
 @Repository
-public interface PlanoCursoRepository extends JpaRepository<PlanoCurso, Long> {
+public interface PlanoCursoRepository extends JpaRepository<PlanoCurso, Integer> {
 
     // listar disciplinas de um curso
     @Query("SELECT p.disciplina FROM plano_curso p WHERE p.curso.pkCurso = :cursoId")
-    List<Disciplina> findDisciplinasByCursoId(Long cursoId);
+    List<Disciplina> findDisciplinasByCursoId(Integer cursoId);
 
-    List<PlanoCurso> findByCursoPkCursoOrderBySemestre(Long cursoId);
+    List<PlanoCurso> findByCursoPkCursoOrderBySemestre(Integer cursoId);
 
 }

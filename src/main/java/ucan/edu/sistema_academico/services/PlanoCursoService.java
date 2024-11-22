@@ -1,13 +1,9 @@
 package ucan.edu.sistema_academico.services;
 
-import ucan.edu.sistema_academico.entities.Disciplina;
+import org.springframework.stereotype.Service;
 import ucan.edu.sistema_academico.entities.PlanoCurso;
 
-import java.util.List;
+@Service
+public class PlanoCursoService extends AbstractService<PlanoCurso, Integer> {
 
-public interface PlanoCursoService {
-
-    List<Disciplina> buscarDisciplinasDoPlanodeCursoPeloFkCurso(Long fkCurso);
-
-    List<PlanoCurso> buscarPlanoCursoAgrupadoPorSemestre(Long fkCurso);
 }

@@ -16,7 +16,7 @@ public class Precedencia {
     @Id
     @Column(name = "pk_precedencia")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkPrecedencia;
+    private Integer pkPrecedencia;
 
     @OneToOne
     @JoinColumn(name = "fk_disciplina")

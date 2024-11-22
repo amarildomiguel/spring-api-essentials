@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ucan.edu.sistema_academico.entities.Precedencia;
-import ucan.edu.sistema_academico.services.implementacao.PrecedenciaServiceImpl;
+import ucan.edu.sistema_academico.services.PrecedenciaService;
 import ucan.edu.sistema_academico.utils.ResponseBody;
 
 import java.util.Optional;
@@ -14,13 +14,7 @@ import java.util.Optional;
 public class PrecedenciaController extends BaseController {
 
     @Autowired
-    private PrecedenciaServiceImpl service;
-
-    @GetMapping("/disciplina/{id}")
-    public ResponseEntity<ResponseBody> buscarPrecedenciasPorFkDisciplina(@PathVariable Long id) {
-        return this.ok("Lista de precedencias por disciplina",
-                this.service.buscarPrecedenciasPorFkDisciplina(id));
-    }
+    private PrecedenciaService service;
 
     @GetMapping
     public ResponseEntity<ResponseBody> listar() {
@@ -28,7 +22,7 @@ public class PrecedenciaController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Long id) {
+    public ResponseEntity<ResponseBody> obter(@PathVariable Integer id) {
         Optional<Precedencia> entidade = this.service.findById(id);
         if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
@@ -37,16 +31,16 @@ public class PrecedenciaController extends BaseController {
 
     @PostMapping
     public ResponseEntity<ResponseBody> criar(@RequestBody Precedencia entidade) {
-        return this.created("Adicionado com sucesso.", this.service.criar(entidade));
+        return this.created("Adicionado com sucesso.", this.service.create(entidade));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Long id) {
-        return this.ok("Eliminado com sucesso.", this.service.eliminar(id));
+    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Integer id) {
+        return this.ok("Eliminado com sucesso.", this.service.delete(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Long id, @RequestBody Precedencia entidade) {
-        return this.ok("Editado com sucesso.", (Precedencia) service.editar(id, entidade));
+    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Integer id, @RequestBody Precedencia entidade) {
+        return this.ok("Editado com sucesso.", (Precedencia) service.update(id, entidade));
     }
 }

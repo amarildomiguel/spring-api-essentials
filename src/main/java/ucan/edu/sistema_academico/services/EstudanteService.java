@@ -1,14 +1,10 @@
 package ucan.edu.sistema_academico.services;
 
+import org.springframework.stereotype.Service;
 import ucan.edu.sistema_academico.entities.Estudante;
-import ucan.edu.sistema_academico.entities.Pessoa;
 
-public interface EstudanteService {
 
-    // padronizar o codigo
-    Estudante criar(Estudante estudante, Pessoa pessoa);
+@Service
+public class EstudanteService extends AbstractService<Estudante, Integer> {
 
-    Estudante editar(Long id, Estudante estudante);
-
-    Estudante buscarPorNumeroEstudante(String numeroEstudante);
 }

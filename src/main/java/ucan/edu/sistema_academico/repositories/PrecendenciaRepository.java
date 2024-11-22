@@ -9,10 +9,10 @@ import ucan.edu.sistema_academico.entities.Precedencia;
 import java.util.List;
 
 @Repository
-public interface PrecendenciaRepository extends JpaRepository<Precedencia, Long> {
+public interface PrecendenciaRepository extends JpaRepository<Precedencia, Integer> {
 
     // listar as precedencias de uma determinada disciplina indicada por parameto
     @Query("SELECT p FROM precendencia p WHERE p.fkDisciplina.pkDisciplina = :disciplinaId")
-    List<Precedencia> findPrecedenciasByFkDisciplina(@Param("disciplinaId") Long disciplinaId);
+    List<Precedencia> findPrecedenciasByFkDisciplina(@Param("disciplinaId") Integer disciplinaId);
 
 }

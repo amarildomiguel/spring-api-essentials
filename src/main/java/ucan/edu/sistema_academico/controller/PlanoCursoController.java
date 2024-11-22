@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ucan.edu.sistema_academico.entities.PlanoCurso;
-import ucan.edu.sistema_academico.services.implementacao.PlanoCursoServiceImpl;
+import ucan.edu.sistema_academico.services.PlanoCursoService;
 import ucan.edu.sistema_academico.utils.ResponseBody;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -15,18 +14,7 @@ import java.util.Optional;
 public class PlanoCursoController extends BaseController {
 
     @Autowired
-    private PlanoCursoServiceImpl service;
-
-    @GetMapping("/curso/{id}")
-    public ResponseEntity<ResponseBody> planoCurso(@PathVariable Long id) {
-        return this.ok("Lista", this.service.buscarDisciplinasDoPlanodeCursoPeloFkCurso(id));
-    }
-
-    @GetMapping("/curso/{id}/agrupado")
-    public ResponseEntity<ResponseBody> planoCursoAgrupadoPorSemestre(@PathVariable Long id) {
-        List<PlanoCurso> planoCursoAgrupado = this.service.buscarPlanoCursoAgrupadoPorSemestre(id);
-        return this.ok("Lista agrupada por semestre", planoCursoAgrupado);
-    }
+    private PlanoCursoService service;
 
     @GetMapping
     public ResponseEntity<ResponseBody> listar() {
@@ -34,7 +22,7 @@ public class PlanoCursoController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseBody> obter(@PathVariable Long id) {
+    public ResponseEntity<ResponseBody> obter(@PathVariable Integer id) {
         Optional<PlanoCurso> entidade = this.service.findById(id);
         if (entidade.isPresent())
             return this.ok("Encontrado com sucesso.", entidade.get());
@@ -43,16 +31,16 @@ public class PlanoCursoController extends BaseController {
 
     @PostMapping
     public ResponseEntity<ResponseBody> criar(@RequestBody PlanoCurso entidade) {
-        return this.created("Adicionado com sucesso.", this.service.criar(entidade));
+        return this.created("Adicionado com sucesso.", this.service.create(entidade));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Long id) {
-        return this.ok("Eliminado com sucesso.", this.service.eliminar(id));
+    public ResponseEntity<ResponseBody> eliminar(@PathVariable("id") Integer id) {
+        return this.ok("Eliminado com sucesso.", this.service.delete(id));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Long id, @RequestBody PlanoCurso entidade) {
-        return this.ok("Editado com sucesso.", (PlanoCurso) service.editar(id, entidade));
+    public ResponseEntity<ResponseBody> editar(@PathVariable("id") Integer id, @RequestBody PlanoCurso entidade) {
+        return this.ok("Editado com sucesso.", (PlanoCurso) service.update(id, entidade));
     }
 }

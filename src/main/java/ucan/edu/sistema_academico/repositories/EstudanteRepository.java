@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import ucan.edu.sistema_academico.entities.Estudante;
 
 @Repository
-public interface EstudanteRepository extends JpaRepository<Estudante, Long> {
+public interface EstudanteRepository extends JpaRepository<Estudante, Integer> {
     Estudante findByNumeroEstudante(String numeroEstudante);
 
 }

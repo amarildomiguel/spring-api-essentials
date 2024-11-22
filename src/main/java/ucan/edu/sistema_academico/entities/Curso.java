@@ -18,7 +18,7 @@ public class Curso {
     @Id
     @Column(name = "pk_curso")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pkCurso;
+    private Integer pkCurso;
 
     @Column(name = "nome", nullable = false)
     private String nome;

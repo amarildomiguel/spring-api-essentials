@@ -1,11 +1,10 @@
 package ucan.edu.sistema_academico.services;
 
-
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
 import ucan.edu.sistema_academico.entities.Precedencia;
 
-import java.util.List;
+@Service
+public class PrecedenciaService extends AbstractService<Precedencia, Integer> {
 
-public interface PrecedenciaService {
-    List<Precedencia> buscarPrecedenciasPorFkDisciplina(Long fkDisciplina);
+
 }
