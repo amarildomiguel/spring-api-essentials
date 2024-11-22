@@ -5,6 +5,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import ucan.edu.sistema_academico.entities.Estudante;
 import ucan.edu.sistema_academico.repositories.EstudanteRepository;
+import ucan.edu.sistema_academico.utils.LatencyUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,6 @@ public class EstudanteService extends AbstractService<Estudante, Integer> {
     @Autowired
     EstudanteRepository repository;
 
-
     List<Estudante> findAllByOrderByNomeAsc() {
         return repository.findAllByOrderByNomeAsc();
     }
@@ -24,16 +24,7 @@ public class EstudanteService extends AbstractService<Estudante, Integer> {
     @Override
     @Cacheable("estudante_cache")
     public Optional<Estudante> findById(Integer id) {
+        LatencyUtils.simulateLatency(2); // simular latencia de 2s
         return repository.findById(id);
     }
-
-    private void simulateLatency() {
-        try {
-            long time = 1000L;
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            throw new IllegalStateException(e);
-        }
-    }
-
 }

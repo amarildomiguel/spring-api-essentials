@@ -3,6 +3,7 @@ package ucan.edu.sistema_academico.config;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,25 +18,20 @@ import java.util.List;
 @Configuration
 public class LoadJsonFilesConfig {
 
-    private final LocalidadeRepository localidadeRepository;
-    private final DisciplinaRepository disciplinaRepository;
-    private final CursoRepository cursoRepository;
-    private final PrecendenciaRepository precendenciaRepository;
-    private final PlanoCursoRepository planoCursoRepository;
-    private final ObjectMapper objectMapper;
+    @Autowired
+    private LocalidadeRepository localidadeRepository;
+    @Autowired
+    private DisciplinaRepository disciplinaRepository;
+    @Autowired
+    private CursoRepository cursoRepository;
+    @Autowired
+    private PrecendenciaRepository precendenciaRepository;
+    @Autowired
+    private PlanoCursoRepository planoCursoRepository;
 
-    // Injeção de dependências via construtor
-    public LoadJsonFilesConfig(
-            LocalidadeRepository localidadeRepository,
-            DisciplinaRepository disciplinaRepository,
-            CursoRepository cursoRepository,
-            PrecendenciaRepository precendenciaRepository,
-            PlanoCursoRepository planoCursoRepository) {
-        this.disciplinaRepository = disciplinaRepository;
-        this.cursoRepository = cursoRepository;
-        this.precendenciaRepository = precendenciaRepository;
-        this.planoCursoRepository = planoCursoRepository;
-        this.localidadeRepository = localidadeRepository;
+    private ObjectMapper objectMapper;
+    
+    public LoadJsonFilesConfig() {
         this.objectMapper = new ObjectMapper();
         this.objectMapper.registerModule(new JavaTimeModule());
     }

@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import ucan.edu.sistema_academico.entities.Estudante;
 import ucan.edu.sistema_academico.repositories.EstudanteRepository;
 
 @Configuration
+@DependsOn("loadJsonFilesConfig")
 public class LoadFakerDataConfig {
 
     @Autowired
